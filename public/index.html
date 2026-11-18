@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Chat Assistant</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <button class="btn primary full" id="newChat">+ New chat</button>
+        <input class="search" id="search" type="search" placeholder="Search conversations…" autocomplete="off" />
+      </div>
+      <ul class="convo-list" id="convoList" aria-label="Conversation history"></ul>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu" id="menuBtn" aria-label="Toggle history">☰</button>
+        <h1 id="chatTitle">AI Chat Assistant</h1>
+        <div class="tone" role="radiogroup" aria-label="Response tone">
+          <span class="tone-label">Tone</span>
+          <button role="radio" data-tone="professional">Professional</button>
+          <button role="radio" data-tone="casual">Casual</button>
+          <button role="radio" data-tone="concise">Concise</button>
+        </div>
+      </header>
+
+      <section class="messages" id="messages" aria-live="polite"></section>
+
+      <form class="composer" id="composer">
+        <textarea id="input" rows="1" placeholder="Message the assistant…  (Enter to send, Shift+Enter for a new line)" maxlength="8000"></textarea>
+        <button type="submit" class="btn primary send" id="sendBtn">Send</button>
+      </form>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>

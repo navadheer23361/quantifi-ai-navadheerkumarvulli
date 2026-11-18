@@ -1,0 +1,21 @@
+{
+  "name": "ai-chat-assistant",
+  "version": "1.0.0",
+  "description": "Streaming AI chat assistant with tone toggle, history sidebar and MongoDB persistence",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.60.0",
+    "@google/genai": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.5.0",
+    "openai": "^4.56.0"
+  }
+}
